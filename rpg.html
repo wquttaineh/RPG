@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<title>RPG GAME!</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+		<script type="text/javascript" src="assets/rpg.js"></script>
+
+	</head>
+
+
+	<body background="assets/images/background2.jpg"> 
+		<div id="container"> 
+
+			<h1>NARUTO RPG GAME!</h1>
+
+			<!-- First Row Start -->
+			<div id="emptyspace" class="row">
+				<div class="col-sm-2">
+					<div id="firstChartDiv">
+						<img id="firstChart" src="assets/images/naruto.png" width="200px" height="200px">
+					</div>
+				</div>
+				<div class="col-sm-2">
+					<div id="secondChartDiv">
+						<img id="secondChart" src="assets/images/kakashi.png" width="200px" height="200px">
+					</div>	
+				</div>
+				<div class="col-sm-2">
+					<div id="thirdChartDiv">
+						<img id="thirdChart" src="assets/images/sasuke.png" width="200px" height="200px">
+					</div>	
+				</div>
+				<div class="col-sm-2">
+					<div id="fourthChartDiv">
+						<img id="fourthChart" src="assets/images/madara.png" width="200px" height="200px">
+					</div>	
+				</div>
+				
+				<div class="col-lg-4"></div>
+
+			</div>	
+			<!-- First Row Ends Here -->
+
+				
+
+			<!-- Second Row Start Here -->
+			<div id="emptyspace1" class="row">
+				<h2>Enemies Available to Attack!</h2>
+				<div class="col-sm-2">
+					<div id="enemies">
+					</div>
+				</div>
+				<div class="col-sm-2">
+					<div id="enemies1">
+					
+					</div>
+				</div>
+				<div class="col-sm-2">
+					<div id="enemies2">
+					
+					</div>
+				</div>
+			</div>
+
+			<!-- Second Row Ends Here -->
+
+			<!-- Third Row Starts Here -->
+			<div id="emptyspace2" class="row">
+				<div class="col-sm-4">
+					<div id="yourcharacter">
+						<h2>Your character</h2>	
+					</div>
+				</div>
+			</div>
+
+			<!-- Third Row Ends Here -->
+
+			<!-- Fourth Row Ends Here -->
+				<div id="emptyspace2" class="row">
+					<div class="col-sm-2">
+						<div id="fight">
+							<h2>Fight Section</h2>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div id="fight1">
+							
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div id="fight2">
+							
+						</div>
+					</div>
+				</div>
+
+			<!-- Fourth Row Ends Here -->
+
+			<!-- Fifth Row Ends Here -->
+				<div id="emptyspace3" class="row">
+					<div class="col-sm-2">
+						<div id="defender">
+							<h2>Defender</h2>
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div id="defender1">
+							
+						</div>
+					</div>
+					<div class="col-sm-2">
+						<div id="defender2">
+						
+						</div>
+					</div>
+				</div>
+			<!-- Fifth Row Ends Here -->
+			<!-- End of Container  -->
+		</div>
+	<script>
+	$(document).ready(function(){
+		var firstChart = true;
+		$("#firstChartDiv").on("click", function(event){
+			if("#firstChartDiv"){
+				$("#emptyspace").append(yourcharacter)
+				$("#emptyspace").append(firstChartDiv)
+				$("#enemies").append(secondChartDiv)
+				$("#enemies1").append(thirdChartDiv)
+				$("#enemies2").append(fourthChartDiv)
+			}
+
+		});
+
+		var secondChart = true;
+		$("#secondChartDiv").on("click", function(event){
+			if("#secondChartDiv"){
+				$("#emptyspace").append(yourcharacter)
+				$("#emptyspace").append(secondChartDiv)
+				$("#enemies").append(firstChartDiv)
+				$("#enemies1").append(thirdChartDiv)
+				$("#enemies2").append(fourthChartDiv)
+			}else{
+
+			}
+		});	
+		var thirdChart = true;
+		$("#thirdChartDiv").on("click", function(event){
+			if("#thirdChartDiv"){
+				$("#emptyspace").append(yourcharacter)
+				$("#emptyspace").append(thirdChartDiv)
+				$("#enemies").append(firstChartDiv)
+				$("#enemies1").append(secondChartDiv)
+				$("#enemies2").append(fourthChartDiv)
+			}else{
+
+			}
+		});	
+		var fourthChart = true;
+		$("#fourthChartDiv").on("click", function(event){
+			if("#fourthChartDiv"){
+				$("#emptyspace").append(yourcharacter)
+				$("#emptyspace").append(fourthChartDiv)
+				$("#enemies").append(firstChartDiv)
+				$("#enemies1").append(secondChartDiv)
+				$("#enemies2").append(thirdChartDiv)
+			}else{
+
+			}
+		});	
+
+});
+
+	</script>
+
+	</body>
+</html>
