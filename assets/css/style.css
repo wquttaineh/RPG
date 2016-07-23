@@ -1,20 +1,27 @@
 h1 {
-	margin-left:1000px;	
 	color:yellow;
-
-
+	font-family: 'Kavoon', cursive;
+}
+.row1{
+	overflow: auto;
 }
 
 h2 {
-	 
 	color:darkgreen;
-	margin-left:;
+	margin-left:20px;
+	font-family: 'Kavoon', cursive;
+}
+#firstChartDiv {
+	margin-left:10px;
+	
 }
 
-.row {
+#container {
 	margin-left:20px;
 }
-#emptyspace{
-	/*height: 100px;*/
-	/*margin-left:20px;*/
+.players{
+	background-color:white;
+	text-align: center;
+	border:5px solid blue; 
+	margin-left:20px;
 }

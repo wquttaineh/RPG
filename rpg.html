@@ -123,6 +123,31 @@
 		</div>
 	<script>
 	$(document).ready(function(){
+
+		var naruto = {
+			HP: 2000,
+			NAME: naruto,
+			Attack: 150,
+		};
+		var kakashi = {
+			HP: 1000,
+			NAME: kakashi,
+			Attack: 100,
+		};
+		var sasuke = {
+			HP: 3000,
+			NAME: sasuke,
+			Attack: 75,
+		};
+		var madara = {
+			HP: 5000,
+			NAME: madara,
+			Attack: 50,
+
+		};
+
+		// var $defenders = $("<div/>").addClass("jedi col-sm-3").attr('jedi-id', defenderIndex).html('<span>' + defender[defenderIndex].name + '</span><img src=./assets/images/' + defender[defenderIndex].image + ' class="img-responsive">' + '<span>' + defender[defenderIndex].health + '</span>');
+
 		var firstChart = true;
 		$("#firstChartDiv").on("click", function(event){
 			if("#firstChartDiv"){

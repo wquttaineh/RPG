@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<title>RPG GAME!</title>
+		<meta charset="utf-8">
+		<link href="https://fonts.googleapis.com/css?family=Kavoon" rel="stylesheet">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+
+		<link rel="stylesheet" type="text/css" href="assets/css/style.css">
+		<script   src="https://code.jquery.com/jquery-3.1.0.min.js"   integrity="sha256-cCueBR6CsyA4/9szpPfrX3s49M9vUU5BgtiJj06wt/s="   crossorigin="anonymous"></script>
+		<script type="text/javascript" src="assets/rpg.js"></script>
+
+	</head>
+	<body background="assets/images/background2.jpg">
+	</body>
+	<script>
+	$(document).ready(function(){
+		var naruto = {
+				hp: 2000,
+				name: "narutouzumaki",
+				attackpower: 150,
+				img: "naruto2.png",
+			};
+		var kakashi = {
+				hp: 1000,
+				name: "kakashihatake",
+				attackpower: 100,
+				img: "kakashi1.png",
+			};
+		var sasuke = {
+				hp: 3000,
+				name: "sasukeuchiha",
+				attackpower: 75,
+				img: "sasuke3.png",
+			};
+		var madara = {
+				hp: 5000,
+				name: "madarauchiha",
+				attackpower: 50,
+				img: "madara.png",
+			};
+
+		var $selectCharacterArray = [naruto,kakashi,sasuke,madara];
+
+
+		var $makeARow0 = $("<div/>").addClass("row0 row").attr("id","selectCharactersRow0");
+		var $makeARow1 = $("<div/>").addClass("row1 row").attr("id","selectCharactersRow1");
+		var $makeARow2 = $("<div/>").addClass("row2 row").attr("id","selectCharactersRow2");
+		var $makeARow3 = $("<div/>").addClass("row3 row").attr("id","selectCharactersRow3");
+		var $makeARow4 = $("<div/>").addClass("row4 row").attr("id","selectCharactersRow4");
+
+		var col0 = $("<div/>").addClass("col-sm-8 intro0");
+		var col1 = $("<div/>").addClass("col-sm-4 intro1").html("<h1>NARUTO RPG GAME</h1>");
+		var col2 = $("<div/>").addClass("col-sm-4 intro2").html("<h2>Your character</h2>");
+		var col3 = $("<div/>").addClass("col-sm-8 intro3");
+		var col4 = $("<div/>").addClass("col-sm-4 intro4").html("<h2>Enemies Available to Attack!</h2>");
+		var col5 = $("<div/>").addClass("col-sm-8 intro3");
+		var col6 = $("<div/>").addClass("col-sm-4 intro5").html("<h2>Defender</h2>");
+
+		$("body").append($makeARow0);
+		$("#selectCharactersRow0").append(col0,col1);
+		$("body").append($makeARow1);
+		$("body").append($makeARow2);
+		$("#selectCharactersRow0").append(col2, col3);
+		$("body").append($makeARow3);
+		$("#selectCharactersRow3").append(col4, col5);
+		$("body").append($makeARow4);
+		$("#selectCharactersRow4").append(col6);
+
+		for (var i = 0; i < $selectCharacterArray.length; i++) {
+		
+		 var $characters = $('<div/>').addClass("col-sm-2 players").attr("id", $selectCharacterArray[i].name).html('<span>' + $selectCharacterArray[i].name + '</span><img src=./assets/images/' + $selectCharacterArray[i].img + ' class="img-responsive">' + '<span>' + $selectCharacterArray[i].hp + '</span>');
+
+		 $("#selectCharactersRow1").append($characters);
+		}
+
+		// var $selectPlayer = false;
+		$('.players').on('click', function(event){
+
+			var $temp = this.getAttribute("id");
+			console.log($temp);
+			// $selectPlayer = true;
+			var testArray = ["#narutouzumaki","#sasukeuchiha","#kakashihatake","#madarauchiha"];
+				for (var i = 0; i < testArray.length; i++) {
+					console.log($temp);
+					console.log(testArray[i]);
+					if(("#" + $temp) === testArray[i]){
+
+					}
+					else{
+					$("#selectCharactersRow3").append($(testArray[i]));
+					}
+				}
+
+		
+
+		});
+
+	});
+	</script>
+</html>
