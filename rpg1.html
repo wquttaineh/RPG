@@ -21,6 +21,7 @@
 				attackpower: 150,
 				img: "naruto2.png",
 				realname: "Naruto Uzumaki",
+				counterattack: 150,
 			};
 		var kakashi = {
 				hp: 1000,
@@ -28,6 +29,7 @@
 				attackpower: 100,
 				img: "kakashi1.png",
 				realname: "Kakashi Hatake",
+				counterattack: 100,
 			};
 		var sasuke = {
 				hp: 3000,
@@ -35,6 +37,7 @@
 				attackpower: 75,
 				img: "sasuke3.png",
 				realname: "Susuke Uchiha",
+				counterattack: 75, 
 			};
 		var madara = {
 				hp: 5000,
@@ -42,9 +45,10 @@
 				attackpower: 50,
 				img: "madara.png",
 				realname: "Madara Uchiha",
+				counterattack: 50,
 			};
 
-
+		$('div span')
 		var $selectCharacterArray = [naruto,kakashi,sasuke,madara];
 
 
@@ -78,17 +82,24 @@
 		$("#defenderC").append(col6);
 		$(".intro5").append(btn);
 
+
+		var playerOne; 
+		var playerTwo;
 		for (var i = 0; i < $selectCharacterArray.length; i++) {
 		
-		 var $characters = $('<div/>').addClass("col-sm-2 players").attr("id", $selectCharacterArray[i].name).html('<span>' + $selectCharacterArray[i].realname + '</span><img width="200px" height="200px" src=./assets/images/' + $selectCharacterArray[i].img + '>' + '<span> HP: ' + $selectCharacterArray[i].hp + '</span>');
+		 var $characters = $('<div/>').addClass("col-sm-2 players").attr("id", $selectCharacterArray[i].name).html('<span>' + $selectCharacterArray[i].realname + '</span><img width="200px" height="200px" src=./assets/images/' + $selectCharacterArray[i].img + '>' + '<span id=' + [i] + '> HP: ' + $selectCharacterArray[i].hp + '</span>');
 
 		 $("#yourChar").append($characters);
+
+
 		}// for loop 
-		var playerChosen = false
+		playerChosen = false
 		var defenderChosen = false
 		$('.players').on('click', function(event){
 			if(playerChosen == false){
+				
 				var $temp = this.getAttribute("id");
+				
 				console.log($temp);
 				var testArray = ["#narutouzumaki","#sasukeuchiha","#kakashihatake","#madarauchiha"];
 					for (var i = 0; i < testArray.length; i++) {
@@ -107,14 +118,17 @@
 					else{
 				
 				$(".enemy").on("click", function(){
-					console.log("THANK YOU AGAIN NIKE");
+
 				if(defenderChosen == false){
+					
 				var $temp1 = this.getAttribute("id");
 				var testArray = ["#narutouzumaki","#sasukeuchiha","#kakashihatake","#madarauchiha"];
 				for (var i = 0; i < testArray.length; i++) {
 					console.log($temp1);
 					console.log(testArray[i]);
 					if(("#" + $temp1) === testArray[i]){
+					
+					console.log(playerTwo);
 					$(testArray[i]).addClass("defender1");
 					$("#defenderChar").append($(testArray[i]));
 					defenderChosen = true;
@@ -127,6 +141,15 @@
 				})//on click function 
 
 			}; // else statement 
+			// $("#atkbtn").on("click", function(){
+			// playerOne.hp -= playerTwo.counterattack;
+			// playerTwo.hp -= playerOne.attackpower;
+			// playerOne.attackpower += 75;
+			// playerOneSpan.html(playerOne.hp);
+			// playerTwoSpan.html(playerOne.hp);
+			// console.log(playerTwo.hp);
+			// console.log(playerOne.hp);
+			// });
 		});// function
 
 
