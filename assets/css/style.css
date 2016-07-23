@@ -17,11 +17,26 @@ h2 {
 }
 
 #container {
-	margin-left:20px;
+	margin-left:30px;
 }
 .players{
 	background-color:white;
 	text-align: center;
 	border:5px solid blue; 
-	margin-left:20px;
+	margin-left:30px;
+	overflow: auto;
+}
+.enemy{
+	background-color:red;
+	margin-left:30px;
+}
+.defender1 {
+	background-color: black;
+	color:white;
+	margin-left:30px;
+
+}
+#atkbtn{
+	margin-left:30px;
+	margin-bottom:20px;
 }
